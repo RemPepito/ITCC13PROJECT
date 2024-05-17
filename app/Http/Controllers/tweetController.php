@@ -8,12 +8,10 @@ class tweetController extends Controller
 {
     public function  store()
     {
-        request()->validate([
+        $validated = request()->validate([
             'content' => 'required|min:1|max:240'
         ]);
-        $tweet = tweet::create([
-            'content' =>request()->get('content',null),
-        ]);
+        $tweet = tweet::create($validated);
 
         return redirect()->route('dashboardPage')->with('success','share your success!');
     }
@@ -38,12 +36,11 @@ class tweetController extends Controller
 
     public function update(Tweet $tweet){
 
-        request()->validate([
+        $validated = request()->validate([
             'content' => 'required|min:1|max:240'
         ]);
 
-        $tweet->content = request()->get('content','');
-        $tweet->save();
+        $tweet->update($validated);
 
         return redirect()->route('tweets.show',$tweet->id)->with('success',"changes updated");
     }
