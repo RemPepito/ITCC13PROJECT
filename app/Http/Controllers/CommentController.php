@@ -17,4 +17,6 @@ class CommentController extends Controller
 
         return redirect()->route('tweets.show',$tweet->id)->with('success',"Comment posted!");
     }
+
+    
 }
