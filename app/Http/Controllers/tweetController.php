@@ -20,7 +20,7 @@ class tweetController extends Controller
     }
     public function destroy(Tweet $tweetID){
         if(auth()->id()!== $tweetID->user_id){
-            abort(404,"you are not the author");
+            return redirect()->route('dashboardPage')->with('error',"you are not the creator of the content!");
         }
         $tweetID->delete();
 
@@ -33,7 +33,9 @@ class tweetController extends Controller
     }
 
     public function edit(Tweet $tweet){
-
+        if(auth()->id()!== $tweet->user_id){
+            return redirect()->route('dashboardPage')->with('error',"you are not the creator of the content!");
+        }
         $editing =true;
 
         return view('tweets.show', compact('tweet', 'editing'));
@@ -41,8 +43,8 @@ class tweetController extends Controller
 
     public function update(Tweet $tweetID){
 
-        if(auth()->id()!== $tweetID->user_id){
-            abort(404,"you are not the author");
+        if (auth()->id() !== $tweetID->user_id) {
+            return redirect()->route('dashboardPage')->with('error', 'You are not the creator');
         }
         $tweetID->delete();
 

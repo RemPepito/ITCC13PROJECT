@@ -52,6 +52,5 @@
                     {{ $tweet->created_at }} </span>
             </div>
         </div>
-        @include('reuseableComponents.commentsContent')
     </div>
 </div>
