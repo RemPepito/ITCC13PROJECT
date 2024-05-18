@@ -19,4 +19,12 @@ class DashboardController extends Controller
             'tweets'=> $tweets->paginate(5)
         ]);
     }
+
+    public function viewR(){
+        return view('auth.register');
+    }
+
+    public function store(){
+        return view('auth.register');
+    }
 }

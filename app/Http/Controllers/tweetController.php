@@ -11,12 +11,17 @@ class tweetController extends Controller
         $validated = request()->validate([
             'content' => 'required|min:1|max:240'
         ]);
-        $tweet = tweet::create($validated);
+
+        $validated['user_id'] = auth()->id();
+
+        tweet::create($validated);
 
         return redirect()->route('dashboardPage')->with('success','share your success!');
     }
     public function destroy(Tweet $tweetID){
-
+        if(auth()->id()!== $tweetID->user_id){
+            abort(404,"you are not the author");
+        }
         $tweetID->delete();
 
         return redirect()->route('dashboardPage')->with('success','deleted success!');
@@ -34,14 +39,19 @@ class tweetController extends Controller
         return view('tweets.show', compact('tweet', 'editing'));
     }
 
-    public function update(Tweet $tweet){
+    public function update(Tweet $tweetID){
+
+        if(auth()->id()!== $tweetID->user_id){
+            abort(404,"you are not the author");
+        }
+        $tweetID->delete();
 
         $validated = request()->validate([
             'content' => 'required|min:1|max:240'
         ]);
 
-        $tweet->update($validated);
+        $tweetID->update($validated);
 
-        return redirect()->route('tweets.show',$tweet->id)->with('success',"changes updated");
+        return redirect()->route('tweets.show',$tweetID->id)->with('success',"changes updated");
     }
 }
