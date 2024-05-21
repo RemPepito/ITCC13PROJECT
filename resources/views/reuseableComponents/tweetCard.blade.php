@@ -34,7 +34,7 @@
                     @enderror
                 </div>
                 <div class="">
-                    <button type="submit" class="btn btn-dark mb-2 btn-sm"> Update </button>
+                    <button id="update-button" type="submit" class="btn btn-dark mb-2 btn-sm"> Update </button>
                 </div>
             </form>
         @else
@@ -55,3 +55,14 @@
     </div>
 </div>
 
+<script>
+    document.getElementById('update-button').addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#ffffff';
+        this.style.color ='#000000';
+    });
+
+    document.getElementById('update-button').addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#555555';
+        this.style.color ='#ffffff';
+    });
+</script>
