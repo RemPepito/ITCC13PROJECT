@@ -1,6 +1,6 @@
 @auth()
 
-<h4> Share yours ideas </h4>
+<h4> CAST A SPELL </h4>
 <div class="row">
     <form action="{{route('tweets.store')}}" method="post">
         @csrf
@@ -17,7 +17,7 @@
 </div>
 @endauth
 @guest
-    <h4>Login to share your Ideas</h4>
+    <h4>Login to Cast Your Spell</h4>
 @endguest
 
 
@@ -32,3 +32,4 @@
         this.style.color ='#ffffff';
     });
 </script>
+
