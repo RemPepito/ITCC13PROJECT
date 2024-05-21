@@ -17,7 +17,7 @@
 </div>
 @endauth
 @guest
-    <h4>Login to Cast Your Spell</h4>
+    <h4 class="fw-bold">Login to Cast Your Spell</h4>
 @endguest
 
 

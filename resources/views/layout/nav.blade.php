@@ -8,8 +8,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
                 @guest
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about">About Us</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/login">Login</a>
                     </li>
@@ -18,11 +21,15 @@
                     </li>
                 @endguest
                 @auth()
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link">{{ Auth::user()->name}}</a>
+                        <a class="nav-link active" aria-current="page" href="/about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <form action="{{ route('logout')}}" method="POST">
+                        <a class="nav-link">{{ Auth::user()->name }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button id="logout-button" class="btn btn-danger btn-sm" type="submit">Logout</button>
                         </form>
@@ -37,11 +44,11 @@
     //instagram
     document.getElementById('logout-button').addEventListener('mouseover', function() {
         this.style.backgroundColor = '#ffffff';
-        this.style.color ='#000000';
+        this.style.color = '#000000';
     });
 
     document.getElementById('logout-button').addEventListener('mouseout', function() {
         this.style.backgroundColor = '#DC3545';
-        this.style.color ='#ffffff';
+        this.style.color = '#ffffff';
     });
 </script>

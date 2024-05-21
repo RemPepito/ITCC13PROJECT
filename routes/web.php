@@ -1,10 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\externalLinks;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\tweetController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -21,13 +19,13 @@ Route::post('/tweets', [TweetController::class, 'store'])->name('tweets.store');
 
 Route::delete('/tweet/{tweetID}', [TweetController::class, 'destroy'])->name('tweets.destroy')->middleware('auth');
 
-Route::post('/tweets/{tweet}/comments', [CommentController::class, 'store'])->name('tweets.comments.store')->middleware('auth');
-
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 
 Route::post('/register', [AuthController::class, 'store']);
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+
+Route::get('/about', [DashboardController::class, 'about'])->name('about');
 
 Route::post('/login', [AuthController::class, 'authenticate']);
 

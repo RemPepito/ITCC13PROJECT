@@ -27,4 +27,8 @@ class DashboardController extends Controller
     public function store(){
         return view('auth.register');
     }
+
+    public function about(){
+        return view('about');
+    }
 }

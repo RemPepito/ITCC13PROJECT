@@ -25,16 +25,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <div class="mt-3">
                 <p class="mx-1">Follow TWD's Social Media</p>
-                <a data-mdb-ripple-init class="btn btn-primary" id="instagram-button" style="background-color: #bc2a8d;" role="button" href="https://www.instagram.com/thewizarddispatch/">
+                <a data-mdb-ripple-init class="btn btn-primary" id="instagram-button" target="_blank" style="background-color: #bc2a8d;" role="button" href="https://www.instagram.com/thewizarddispatch/">
                 <i class="fab fa-instagram-square me-2"></i>Instagram</a>
-                <a data-mdb-ripple-init class="btn btn-primary" id="facebook-button" style="background-color: #3b5998;" href="https://www.facebook.com/thewizarddispatch" role="button">
+                <a data-mdb-ripple-init class="btn btn-primary" id="facebook-button" target="_blank" style="background-color: #3b5998;" href="https://www.facebook.com/thewizarddispatch" role="button">
                 <i class="fab fa-facebook-square me-2"></i>Facebook</a>
-                <a data-mdb-ripple-init class="btn btn-primary" id="contact-button" href="https://mail.google.com/mail/u/0/#inbox" role="button">
+                <a data-mdb-ripple-init class="btn btn-primary" id="contact-button" target="_blank" href="https://mail.google.com/mail/u/0/#inbox" role="button">
                 <i class="fas fa-envelope me-2"></i>Contact us</a>
 
             </div>
         <!--CAROUSEL NEWS FEED-->
             <div class="mt-3">
+                <hr class="dashed">
             <div class="d-grid gap-2 col-6 mx-auto">
                 <button class="btn btn-primary" type="button"><span style="font-size:large;"><strong>WIZARD'S NEWS FEED</strong></span></button>
             </div>
