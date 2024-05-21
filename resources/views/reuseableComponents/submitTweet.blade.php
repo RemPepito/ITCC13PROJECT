@@ -11,7 +11,7 @@
             @enderror
         </div>
         <div class="">
-            <button type="submit" class="btn btn-dark"> SHARE </button>
+            <button id="share-button"type="submit" class="btn btn-dark"> SHARE </button>
         </div>
     </form>
 </div>
@@ -19,3 +19,16 @@
 @guest
     <h4>Login to share your Ideas</h4>
 @endguest
+
+
+<script>
+    document.getElementById('share-button').addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#ffffff';
+        this.style.color ='#000000';
+    });
+
+    document.getElementById('share-button').addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#555555';
+        this.style.color ='#ffffff';
+    });
+</script>

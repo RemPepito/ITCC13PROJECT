@@ -24,7 +24,7 @@
                     <li class="nav-item">
                         <form action="{{ route('logout')}}" method="POST">
                             @csrf
-                            <button class="btn btn-danger btn-sm" type="submit">Logout</button>
+                            <button id="logout-button" class="btn btn-danger btn-sm" type="submit">Logout</button>
                         </form>
                     </li>
                 @endauth
@@ -32,3 +32,16 @@
         </div>
     </div>
 </nav>
+
+<script>
+    //instagram
+    document.getElementById('logout-button').addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#ffffff';
+        this.style.color ='#000000';
+    });
+
+    document.getElementById('logout-button').addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#DC3545';
+        this.style.color ='#ffffff';
+    });
+</script>
