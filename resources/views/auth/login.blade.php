@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group mt-3">
                     <label for="remember-me" class="text-dark"></label><br>
-                    <input type="submit" name="submit" class="btn btn-dark btn-md" value="submit">
+                    <input id="submit-button" type="submit" name="submit" class="btn btn-dark btn-md" value="submit">
                 </div>
                 <div class="text-right mt-3">
                     <a href="/register" class="text-dark">Register here</a>
@@ -30,4 +30,16 @@
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#ffffff';
+            this.style.color ='#000000';
+        });
+
+        document.getElementById('submit-button').addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#333333';
+            this.style.color ='#ffffff';
+        });
+        </script>
 @endsection
